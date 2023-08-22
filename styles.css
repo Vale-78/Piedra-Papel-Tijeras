@@ -1,0 +1,61 @@
+body{
+    box-sizing: border-box;
+}
+
+main{
+    border: solid 10px black;
+    padding: 30px 0px;
+}
+
+/* Sección título */
+
+.info-container{
+    text-align: center;
+    background-color: #ba5332;
+    color: white;
+    margin: 20px;
+    padding: 3px;
+    border: solid 20px #e7b469;
+}
+ /*sección  Nombre usuario y saludo */
+#usuarioNameContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+#usuarioNameContainer input{
+    border: solid #e7b469 5px;
+    border-radius: 5px;
+    font-size: large;
+}
+#usuarioNameContainer p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ba5332;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+#usuarioNameContainer button{
+    font-size: large;
+    background-color: #cb846d;
+    border-radius: 5px;
+    border: #cb846d;
+    color: aliceblue;
+}
+/* sección seleccionar-jugada */
+
+#seleccionar-jugada {
+    display: none;
+}
+#seleccionar-jugada .botones-container {
+  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#seleccionar-jugada .botones-container .botones{
+    border: 10px solid #ba5332;
+    padding: 10px;
+}

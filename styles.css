@@ -1,9 +1,17 @@
+:root{
+    --main-bg-color: rgb(6 6 71);;
+    --secundary-bg-color: #cb846d;
+    --oscuro-bg-color: #0a364b;
+    --clarito-bg-color:aliceblue;
+    --primary-bg-color: #e7b469;
+}
+
 body{
     box-sizing: border-box;
 }
 
 main{
-    border: solid 10px black;
+    border: solid 10px var(--oscuro-bg-color);
     padding: 30px 0px;
 }
 
@@ -11,14 +19,18 @@ main{
 
 .info-container{
     text-align: center;
-    background-color: #ba5332;
+    background-color: var(--main-bg-color);
     color: white;
-    margin: 20px;
+    margin: 20px 20px 0 20px;
     padding: 3px;
     border: solid 20px #e7b469;
 }
- /*sección  Nombre usuario y saludo */
-#usuarioNameContainer{
+ /*sección  Saludo con nombre usuario*/
+ #saludoContainer{
+    background-image: url("./assest/Fondo00.png");
+    padding: 85px 0 90px 0;
+ }
+#saludoContainer .usuarioNameContainer{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -26,29 +38,39 @@ main{
     flex-direction: column;
     padding-bottom: 10px;
 }
-#usuarioNameContainer input{
-    border: solid #e7b469 5px;
-    border-radius: 5px;
-    font-size: large;
+#saludoContainer .usuarioNameContainer input{
+    border: solid  var(--oscuro-bg-color) 5px;
+    border-radius: 8px;
+    font-size: x-large;
+    margin-top: 20px;
 }
-#usuarioNameContainer p{
+#saludoContainer .usuarioNameContainer p{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #ba5332;
-    font-size: xx-large;
+    color: var(--main-bg-color);
+    font-size: xxx-large;
     font-weight: bolder;
 }
-#usuarioNameContainer button{
-    font-size: large;
-    background-color: #cb846d;
-    border-radius: 5px;
-    border: #cb846d;
-    color: aliceblue;
+#saludoContainer .usuarioNameContainer .botonIniciar{
+    font-size: x-large;
+    background-color: var(--oscuro-bg-color);
+    border-radius: 8px;
+    border:solid 5px var(--oscuro-bg-color);
+    color: var(--clarito-bg-color);    
+    font-weight: bolder;
 }
+#saludoContainer .usuarioNameContainer .botonIniciar2{
+    font-size: x-large;
+    background-color: var(--oscuro-bg-color);
+    border-radius: 8px;
+    border:solid 5px var(--oscuro-bg-color);
+    color: var(--clarito-bg-color);
+    font-weight: bolder;
+}
+
+
 /* sección seleccionar-jugada */
 
-#seleccionar-jugada {
-    display: none;
-}
+
 #seleccionar-jugada .botones-container {
   
     display: flex;
@@ -56,6 +78,29 @@ main{
     flex-direction: column;
 }
 #seleccionar-jugada .botones-container .botones{
-    border: 10px solid #ba5332;
+    border: 10px solid var(--main-bg-color);
     padding: 10px;
+    margin: 80px;
+}
+#seleccionar-jugada .botones-container .botones p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--main-bg-color);
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+
+#reiniciarJuego .boton-reiniciar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#reiniciarJuego .boton-reiniciar button{
+    align-items: baseline;
+    font-size: x-large;
+    background-color: var(--secundary-bg-color);
+    border-radius: 8px;
+    border:solid 5px var(--oscuro-bg-color);
+    color: var(--clarito-bg-color);
+    font-weight: bolder;
 }

@@ -1,18 +1,25 @@
 let eleccionJugador;
-let posiblesJugadas = ["piedra", "papel","tijera"];
-let piedra = posiblesJugadas[0];
-let papel = posiblesJugadas[1];
-let tijeras= posiblesJugadas[2];
+let jugadaCompu;
+let resultado;
+let piedra = "piedra";
+let papel = "papel";
+let tijeras= "tijeras";
+
+
 
 // disable desabilitar botones
 // display NamedNodeMap, display block
-
-
 
 function saludarUsuario() {
     let nombre = document.getElementById("nombreUsuario").value;
     document.getElementById("saludoUsuario").innerHTML = "Bienvenida/o " + nombre + " !" + "<br/> Si estás lista/o para comenzar, inicia Juego!";
 }
+// function aleatorio(min,max) {
+//     return Math.floor(Math.random()*(max-1+1)+min);
+// }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
 document.addEventListener("DOMContentLoaded", function (){
     let botonIniciarJuego= document.getElementById("startButtonJuego");
@@ -51,59 +58,76 @@ function comenzar (){
     let botonPapel = document.getElementById("papel");
     let botonTijeras = document.getElementById("tijeras");
     botonPiedra.addEventListener("click", ()=> {
-         eleccionJugador = "piedra";
-         document.getElementById("eleccion").innerHTML = "Elegiste Piedra" });
+         eleccionJugador = piedra;
+         document.getElementById("eleccionJugador").innerHTML = "Elegiste Piedra 🪨"
+        //  console.log(eleccionJugador);
+         JugadaComputadora(); 
+         determinarGanador();
+        });
     botonPapel.addEventListener("click", ()=> {
-         eleccionJugador = "papel";
-         console.log(eleccionJugador);
-         document.getElementById("eleccion").innerHTML = "Elegiste Papel"});
+         eleccionJugador = papel;
+         document.getElementById("eleccionJugador").innerHTML = "Elegiste Papel 🧻"
+        //  console.log(eleccionJugador);
+         JugadaComputadora();
+         determinarGanador();
+        });
+        
     botonTijeras.addEventListener("click", ()=> {
-        eleccionJugador = "tijeras";
-        document.getElementById("eleccion").innerHTML = "Elegiste Tijeras"
-        console.log(eleccionJugador);});  
+        eleccionJugador = tijeras;
+        document.getElementById("eleccionJugador").innerHTML = "Elegiste Tijeras ✂️"
+        // console.log(eleccionJugador);
+        JugadaComputadora();
+        determinarGanador();
+    });  
+    
+    return eleccionJugador;   
 }
 
+function JugadaComputadora(){
+    let eleccionAleatoria = getRandomInt(3);
+    console.log(eleccionAleatoria);
 
-
-
-
-//  en esta ocasión, el usuario ingresará directamente piedra, papel o tijera (sim distinción de mayusculas
-//  o minúsculas) y no su n° correspondiente
-
-function random(min, max) {
-    return Math.floor((Math.random() * (max - min + 1)) + min);
-}
-let aleatorio = random(0,2);
-let jugadaCompu;
-
-function obtenerJugadaComputadora(){
-    if(aleatorio==0){
+    if(eleccionAleatoria == 0){
         jugadaCompu = piedra;
-    } else if(aleatorio==1){
+        // console.log(jugadaCompu);  
+        // console.log(typeof(jugadaCompu));
+        document.getElementById("eleccionCompu").innerHTML = "La compu eligió Piedra 🪨";
+
+    } else if(eleccionAleatoria == 1) {
         jugadaCompu = papel;
-    }else {
+        document.getElementById("eleccionCompu").innerHTML = "La compu eligió Papel 🧻";
+        // console.log(jugadaCompu); 
+        // console.log(typeof(jugadaCompu));
+    } else {
         jugadaCompu = tijeras;
+        document.getElementById("eleccionCompu").innerHTML = "La compu eligió Tijeras ✂️";
+        // console.log(jugadaCompu); 
+        // console.log(typeof(jugadaCompu));
     }
  return jugadaCompu;
+} 
+
+function determinarGanador(eleccionJugador, jugadaCompu){
+    
+    if(eleccionJugador == jugadaCompu){
+        document.getElementById("resultadoRonda").innerHTML = "Empate"
+        resultado = "Empate";
+        // console.log(resultado);
+    }else if((eleccionJugador == "piedra" && jugadaCompu == "tijeras") || (eleccionJugador == "papel" && jugadaCompu == "piedra") || (eleccionJugador == "tijeras" && jugadaCompu == "papel")){
+        document.getElementById("resultadoRonda").innerHTML = "Ganaste!!!"
+        resultado = "Ganaste!!!";
+        // console.log(resultado);
+    }else{
+        document.getElementById("resultadoRonda").innerHTML = "Gana la computadora"
+        resultado = "Gana la computadora";
+        // console.log(resultado);
+    }
+    console.log(resultado);
+    console.log(typeof(resultado));
+    return resultado;
+    
 }
 
-// const readlineSync = require("readline-sync");
-// const eleccionJugador = readlineSync.question("Elige : piedra, papel o tijeras: ").toLowerCase();
-
-// // Elimino function obtenerJugadaUsuario() ya que ahora no es necesaria.        
-
-// function determinarGanador(usuario,compu){
-//     let resultado;
-//     if(usuario===compu){
-//         resultado = "Empate"
-        
-//     }else if((usuario===piedra && compu ===tijeras) || (usuario===papel && compu === piedra ) || (usuario===tijeras && compu === papel)){
-//         resultado = "Gana el usuario";
-//     }else{
-//         resultado = "Gana la computadora";
-//     }
-//     return resultado
-// }
 
 // let compuElige = obtenerJugadaComputadora();
 // let resultadoFinal = determinarGanador(eleccionJugador,compuElige );

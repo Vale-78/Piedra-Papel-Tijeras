@@ -11,17 +11,24 @@ let resultadoFinal;
 
 // disable desabilitar botones
 // display NamedNodeMap, display block
-// || (ganaPC < 4 && ganaUsuario < 4)
+
 
 
     function saludarUsuario() {
         let nombre = document.getElementById("nombreUsuario").value;
         let saludoANombre =document.getElementById("saludoUsuario");
+     
+        // Falta ver validacion inicial , activar boton reiniciar y lograr disable
         
         if(nombre=="" || !(isNaN(nombre))){
             saludoANombre.innerHTML = "Ingresa un nombre válido";
+            const botonIniciarJuego= document.getElementById("startButtonJuego");
+            botonIniciarJuego.style.display = "none";
+            const botonComenzar = document.getElementById("startButton");
+            botonComenzar.style.display = "block";
         }else{
             saludoANombre.innerHTML = "Bienvenida/o " + nombre + " !" + "<br/> Si estás lista/o para comenzar, inicia Juego!";
+            
         } 
     }
     document.addEventListener("DOMContentLoaded", function (){

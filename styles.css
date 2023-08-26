@@ -180,3 +180,52 @@ main{
     border:solid 5px var(--oscuro-bg-color);
     color: var(--clarito-bg-color);
 }
+
+@media screen and (max-width:540px){
+     #saludoContainer .usuarioNameContainer p{
+        font-size: x-large;
+        font-weight: bolder;
+    }
+
+    #seleccionar-jugada .botones-container .botones button,
+    #seleccionar-jugada .botones-container .botones button img{
+        max-width: 30%;
+    }
+   
+}
+@media screen and (max-width:320px){
+    body {      
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    #saludoContainer .usuarioNameContainer p{
+        font-size: large;
+        font-weight: bolder;
+    }
+    #saludoContainer .usuarioNameContainer p{
+        font-size: large;
+    }
+    .p6 { 
+        grid-column: 1/3;
+        grid-row: 4; 
+        font-size: medium !important;
+        color: red !important; 
+    }
+    #seleccionar-jugada .botones-container .botones{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #seleccionar-jugada .botones-container .botones p{
+        font-size: medium; 
+    }
+    #seleccionar-jugada .botones-container .botones button,
+    #seleccionar-jugada .botones-container .botones button img{
+      max-width: 30%;
+    } 
+}

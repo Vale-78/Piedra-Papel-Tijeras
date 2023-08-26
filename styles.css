@@ -87,7 +87,7 @@ main{
 #seleccionar-jugada .botones-container .botones{
     border: 10px solid var(--main-bg-color);
     padding: 10px;
-    margin: 80px;
+    margin: 35px;
 }
 
 @keyframes shake {
@@ -173,10 +173,10 @@ main{
 }
 #reiniciarJuego .boton-reiniciar button{
     align-items: baseline;
+    font-weight: bolder;
     font-size: x-large;
-    background-color: var(--secundary-bg-color);
+    background-color: var(--oscuro-bg-color);
     border-radius: 8px;
     border:solid 5px var(--oscuro-bg-color);
     color: var(--clarito-bg-color);
-    font-weight: bolder;
 }

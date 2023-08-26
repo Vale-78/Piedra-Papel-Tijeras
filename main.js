@@ -12,23 +12,22 @@ let resultadoFinal;
 // disable desabilitar botones
 // display NamedNodeMap, display block
 
-
-
     function saludarUsuario() {
         let nombre = document.getElementById("nombreUsuario").value;
         let saludoANombre =document.getElementById("saludoUsuario");
      
-        // Falta ver validacion inicial , activar boton reiniciar y lograr disable
+        // Falta ver validacion inicial , activar boton reiniciar y lograr disable. Agregar suma empates
         
         if(nombre=="" || !(isNaN(nombre))){
             saludoANombre.innerHTML = "Ingresa un nombre válido";
-            const botonIniciarJuego= document.getElementById("startButtonJuego");
-            botonIniciarJuego.style.display = "none";
             const botonComenzar = document.getElementById("startButton");
             botonComenzar.style.display = "block";
+            const botonIniciarJuego= document.getElementById("startButtonJuego");
+            botonIniciarJuego.style.display = "none";
+        
         }else{
-            saludoANombre.innerHTML = "Bienvenida/o " + nombre + " !" + "<br/> Si estás lista/o para comenzar, inicia Juego!";
-            
+            saludoANombre.innerHTML = "Bienvenida/o " + nombre + " !" + "<br/> Si estás lista/o para comenzar, inicia Juego!"; 
+            iniciarJuego();
         } 
     }
     document.addEventListener("DOMContentLoaded", function (){
@@ -36,7 +35,7 @@ let resultadoFinal;
         botonIniciarJuego.style.display = "none";
         /* oculto boton reiniciar juego */
         let seccionReiniciar= document.getElementById("reiniciarJuego");
-        seccionReiniciar.style.display = "none"
+        seccionReiniciar.style.display = "none";
 
     /* oculto iiconos para seleccionar jugada */
         let seccionSeleccionarJugada = document.getElementById("seleccionar-jugada");
@@ -44,7 +43,7 @@ let resultadoFinal;
 
         const botonComenzar = document.getElementById("startButton");
         botonComenzar.addEventListener("click", saludarUsuario, true);
-        botonComenzar.addEventListener("click", iniciarJuego, true);
+
     })
 
     
@@ -95,10 +94,17 @@ let resultadoFinal;
             // console.log(eleccionJugador);
             let jugadaCOMPU = JugadaComputadora();
             determinarGanador(tijeras, jugadaCOMPU);
+            
+        let resetJuego = document.getElementById("resetButton");
+        resetJuego.addEventListener("click", reiniciar);
         });  
         
         return eleccionJugador;   
     }
+    function reiniciar(){
+        comenzar();
+    }
+    
 
     function JugadaComputadora(){
         let eleccionAleatoria = getRandomInt(3);
@@ -117,7 +123,6 @@ let resultadoFinal;
     return jugadaCompu;
     } 
 
-   
     function determinarGanador(eleccionJugador, jugadaCompu){
         const resultadoRondaParrafo = document.getElementById("resultadoRonda");
         let numGanaUsuario = document.getElementById("numeroGanaUsuario");
@@ -183,6 +188,12 @@ let resultadoFinal;
             resultFinal.innerHTML = `Resultado Final : Lo siento, Gana la Computadora.`
         return resultadoFinal
         };
-       
-    }
-   
+        let seccionReiniciar= document.getElementById("reiniciarJuego");
+        seccionReiniciar.style.display = "block";       
+    }            
+
+
+
+     
+  
+        

@@ -5,7 +5,7 @@ let piedra = "piedra";
 let papel = "papel";
 let tijeras= "tijeras";
 ganaPC= 0;
-ganaUsuario=0;
+ganaUsuario = 0;
 partidosJugados = 0;
 let resultadoFinal;
 
@@ -177,16 +177,14 @@ let resultadoFinal;
 function reiniciar(){
 resultado = "";
 partidosJugados = 0;
+ganaPC = 0;
+ganaUsuario = 0; 
 document.getElementById("eleccionJugador").innerHTML = "";
 document.getElementById("eleccionCompu").innerHTML = "";
-resultFinal.innerHTML = ``;
-const resultadoRondaParrafo = document.getElementById("resultadoRonda");
-resultadoRondaParrafo.innerHTML = "";
-let numGanaUsuario = document.getElementById("numeroGanaUsuario");
-
-numGanaUsuario.innerHTML = "";
-let numGanaPC = document.getElementById("numeroGanaPC");
-numGanaPC.innerHTML= "";
+document.getElementById("resultFinal").innerHTML = ``;
+document.getElementById("resultadoRonda").innerHTML = "";
+document.getElementById("numeroGanaUsuario").innerHTML = "";
+document.getElementById("numeroGanaPC").innerHTML= "";
 let seccionReiniciar= document.getElementById("reiniciarJuego");
 seccionReiniciar.style.display = "none";   
 }

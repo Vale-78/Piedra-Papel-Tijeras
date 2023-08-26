@@ -188,7 +188,7 @@ main{
         text-align: center;
         background-color: var(--main-bg-color);
         color: white;
-        margin: 10px 10px 0 10px;
+        margin: 15px 15px 0 15px;
         padding: 3px;
         border: solid 10px #b2d493;
     }
@@ -203,13 +203,44 @@ main{
         font-size: x-large;
         font-weight: bolder;
     }
+    #seleccionar-jugada .botones-container .botones{
+        width: 90%;
+        padding: 0;
+        margin: 0;
+    }
 
     #seleccionar-jugada .botones-container .botones button,
-    #seleccionar-jugada .botones-container .botones button img{
-        max-width: 30%;
+    #seleccionar-jugada .botones-container .botones img{
+        max-width: 50%;
     }
    
 }
+@media screen and (max-width:470px){
+    #seleccionar-jugada .botones-container .botones{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #seleccionar-jugada .botones-container .botones button,
+    #seleccionar-jugada .botones-container .botones img{
+        max-width: 40%;
+    }
+}
+@media screen and (max-width:420px){
+    #seleccionar-jugada .botones-container .botones button,
+    #seleccionar-jugada .botones-container .botones img{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #seleccionar-jugada .botones-container .botones button{
+        max-width: 30%;
+    }
+    #seleccionar-jugada .botones-container .botones .parrafos{
+        font-size: small;
+    }
+}
+   
 @media screen and (max-width:320px){
     body {      
         display: flex;
@@ -219,6 +250,10 @@ main{
         min-height: 100vh;
         margin: 0;
         padding: 0;
+    }
+    main {
+        border: solid 10px var(--oscuro-bg-color);
+        padding: 10px 0px;
     }
     .info-container{
         text-align: center;
@@ -256,8 +291,7 @@ main{
     #seleccionar-jugada .botones-container .botones p{
         font-size: medium; 
     }
-    #seleccionar-jugada .botones-container .botones button,
-    #seleccionar-jugada .botones-container .botones button img{
+    #seleccionar-jugada .botones-container .botones button{
       max-width: 30%;
     } 
     #seleccionar-jugada .botones-container .botones .parrafos{

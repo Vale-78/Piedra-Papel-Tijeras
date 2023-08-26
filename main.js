@@ -63,12 +63,13 @@ let resultadoFinal;
     }
 
     function comenzar (){
+       
         let seccionSaludoInicial = document.getElementById("saludoContainer");
         seccionSaludoInicial.style.display = "none";
-
+        
         let seccionSeleccionarJugada = document.getElementById("seleccionar-jugada");
         seccionSeleccionarJugada.style.display = "block";
-        
+
         let botonPiedra = document.getElementById("piedra");
         let botonPapel = document.getElementById("papel");
         let botonTijeras = document.getElementById("tijeras");
@@ -94,17 +95,12 @@ let resultadoFinal;
             // console.log(eleccionJugador);
             let jugadaCOMPU = JugadaComputadora();
             determinarGanador(tijeras, jugadaCOMPU);
-            
-        let resetJuego = document.getElementById("resetButton");
-        resetJuego.addEventListener("click", reiniciar);
+
         });  
         
         return eleccionJugador;   
     }
-    function reiniciar(){
-        comenzar();
-    }
-    
+   
 
     function JugadaComputadora(){
         let eleccionAleatoria = getRandomInt(3);
@@ -133,13 +129,12 @@ let resultadoFinal;
         if(eleccionJugador==jugadaCompu){
             resultado = "Empate";
             resultadoRondaParrafo.innerHTML = resultado;
-            partidosJugados = partidosJugados +1;
             numGanaUsuario.innerHTML = ganaUsuario;
             numGanaPC.innerHTML= ganaPC;
 
             
         }else if((eleccionJugador==piedra && jugadaCompu ==tijeras) || (eleccionJugador==papel && jugadaCompu == piedra ) || (eleccionJugador==tijeras && jugadaCompu == papel)){
-            resultado = "Gana el usuario";
+            resultado = "Ganaste!!!";
             resultadoRondaParrafo.innerHTML = resultado;
             ganaUsuario = ganaUsuario +1;
             partidosJugados = partidosJugados +1;
@@ -153,9 +148,6 @@ let resultadoFinal;
             numGanaUsuario.innerHTML = ganaUsuario;
             numGanaPC.innerHTML= ganaPC;
         }
-        console.log(partidosJugados);
-        console.log(ganaUsuario);
-        console.log(ganaPC);
 
         return resultado  
      }
@@ -165,34 +157,39 @@ let resultadoFinal;
 
     function resultadoFinalfin(ganaUsuario, ganaPC){
         let resultFinal = document.getElementById("resultFinal");
-        if(ganaUsuario===ganaPC){
-            console.log(`Resultado Final : Empate`);
-            resultadoFinal = "EMPATE";
-            document.getElementById("Piedra").disabled = true;
-            document.getElementById("Papel").disabled = true;
-            document.getElementById("Tijeras").disabled = true;
-            resultFinal.innerHTML = `Resultado Final : Empate`
-        }else if(ganaUsuario > ganaPC){
-            console.log(`Resultado Final : Ganaste, felicitaciones!!! .`);
-            resultadoFinal = `Resultado Final : Ganaste, felicitaciones!!! .`;
+        if(ganaUsuario > ganaPC){
             document.getElementById("Piedra").disabled = true;
             document.getElementById("Papel").disabled = true;
             document.getElementById("Tijeras").disabled = true;
             resultFinal.innerHTML = `Resultado Final : Ganaste, felicitaciones!!!`
         }else{
-            console.log(`Resultado Final : Lo siento, Gana la Computadora.`);
-            resultadoFinal = `Resultado Final : Lo siento, Gana la Computadora.`;
             document.getElementById("Piedra").disabled = true;
             document.getElementById("Papel").disabled = true;
             document.getElementById("Tijeras").disabled = true;
             resultFinal.innerHTML = `Resultado Final : Lo siento, Gana la Computadora.`
-        return resultadoFinal
         };
         let seccionReiniciar= document.getElementById("reiniciarJuego");
-        seccionReiniciar.style.display = "block";       
+        seccionReiniciar.style.display = "block";      
+        let resetJuego = document.getElementById("resetButton");
+        resetJuego.addEventListener("click",reiniciar);
     }            
 
+function reiniciar(){
+resultado = "";
+partidosJugados = 0;
+document.getElementById("eleccionJugador").innerHTML = "";
+document.getElementById("eleccionCompu").innerHTML = "";
+resultFinal.innerHTML = ``;
+const resultadoRondaParrafo = document.getElementById("resultadoRonda");
+resultadoRondaParrafo.innerHTML = "";
+let numGanaUsuario = document.getElementById("numeroGanaUsuario");
 
+numGanaUsuario.innerHTML = "";
+let numGanaPC = document.getElementById("numeroGanaPC");
+numGanaPC.innerHTML= "";
+let seccionReiniciar= document.getElementById("reiniciarJuego");
+seccionReiniciar.style.display = "none";   
+}
 
      
   

@@ -25,7 +25,6 @@ main{
 }
 .info-container:hover{
     background-color: #ffcccc;
-   
     rotate: 360deg;
   }
               
@@ -229,8 +228,8 @@ main{
     #seleccionar-jugada .botones-container .botones img{
         max-width: 50%;
     }
-   
 }
+
 @media screen and (max-width:470px){
     #seleccionar-jugada .botones-container .botones{
         width: 100%;
@@ -246,7 +245,7 @@ main{
     #seleccionar-jugada .botones-container .botones img{
         width: 100%;
         padding: 0;
-        margin: 0;
+        margin: 0 0 0 1%;
     }
     #seleccionar-jugada .botones-container .botones button{
         max-width: 30%;
@@ -301,7 +300,6 @@ main{
     #seleccionar-jugada .botones-container .botones{
         width: 100%;
         padding: 0;
-        margin: 0;
     }
     #seleccionar-jugada .botones-container .botones p{
         font-size: medium; 

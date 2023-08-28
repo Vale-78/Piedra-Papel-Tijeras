@@ -156,17 +156,20 @@ let resultadoFinal;
 
 
     function resultadoFinalfin(ganaUsuario, ganaPC){
+
+        let nombre = document.getElementById("nombreUsuario").value;
+
         let resultFinal = document.getElementById("resultFinal");
         if(ganaUsuario > ganaPC){
             document.getElementById("Piedra").disabled = true;
             document.getElementById("Papel").disabled = true;
             document.getElementById("Tijeras").disabled = true;
-            resultFinal.innerHTML = `Resultado Final : Ganaste, felicitaciones!!!`
+            resultFinal.innerHTML = `Felicitaciones ` + nombre + `,  Ganaste!!!!`
         }else{
             document.getElementById("Piedra").disabled = true;
             document.getElementById("Papel").disabled = true;
             document.getElementById("Tijeras").disabled = true;
-            resultFinal.innerHTML = `Resultado Final : Lo siento, Gana la Computadora.`
+            resultFinal.innerHTML = ` Lo siento `  + nombre + `, Gana la Computadora.`
         };
         let seccionReiniciar= document.getElementById("reiniciarJuego");
         seccionReiniciar.style.display = "block";      

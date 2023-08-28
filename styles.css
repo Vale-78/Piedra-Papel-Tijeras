@@ -14,6 +14,21 @@ main{
     border: solid 10px var(--oscuro-bg-color);
     padding: 30px 0px;
 }
+.info-container {
+    border-style: solid;
+    border-width: 1px;
+  transition:
+    width 2s,
+    height 2s,
+    background-color 2s,
+    rotate 2s;
+}
+.info-container:hover{
+    background-color: #ffcccc;
+   
+    rotate: 360deg;
+  }
+              
 
 /* .choice:hover{
     background: #e25b4d;
@@ -90,9 +105,8 @@ main{
     margin: 35px;
 }
 
+
 @keyframes shake {
-
-
     10%,
     30%,
     50%,
@@ -108,14 +122,16 @@ main{
         transform: translateY(10px);
     }
 }
-
+#seleccionar-jugada .botones-container .botones .efecto {
+    animation: shake 1s;
+}
 #seleccionar-jugada .botones-container .botones {
     font-size: 24px;
     padding: 10px 20px;
     border: 1px solid #ccc;
     background-color: #b2d493;
     border-radius: 5px;
-    animation: shake 1s;
+  
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -221,8 +237,7 @@ main{
         padding: 0;
         margin: 0;
     }
-    #seleccionar-jugada .botones-container .botones button,
-    #seleccionar-jugada .botones-container .botones img{
+    #seleccionar-jugada .botones-container .botones button{
         max-width: 40%;
     }
 }
@@ -271,7 +286,7 @@ main{
         margin-top: 10px;
     }
     #saludoContainer .usuarioNameContainer p{
-        font-size: large;
+        font-size: medium;
         font-weight: bolder;
     }
     #saludoContainer .usuarioNameContainer p{

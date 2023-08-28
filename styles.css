@@ -196,6 +196,7 @@ main{
     border-radius: 8px;
     border:solid 5px var(--oscuro-bg-color);
     color: var(--clarito-bg-color);
+    margin-top: 3%;
 }
 
 @media screen and (max-width:534px){

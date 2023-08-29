@@ -112,7 +112,7 @@ return jugadaCompu;
 
 function determinarGanador(eleccionJugador, jugadaCompu){
     
-    while((ganaPC < 3 && ganaUsuario < 3)) { 
+    if(ganaPC < 3 && ganaUsuario < 3) { 
     const resultadoRondaParrafo = document.getElementById("resultadoRonda");
     let numGanaUsuario = document.getElementById("numeroGanaUsuario");
     let numGanaPC = document.getElementById("numeroGanaPC");
@@ -139,11 +139,12 @@ function determinarGanador(eleccionJugador, jugadaCompu){
             numGanaUsuario.innerHTML = ganaUsuario;
             numGanaPC.innerHTML= ganaPC;
         }  
-    return resultado;
+  
+    } if(ganaPC == 3 || ganaUsuario == 3) {
+        let usuGana= ganaUsuario;
+        let compuGana= ganaPC
+        resultadoFinalfin( usuGana, compuGana);
     }
-    let usuGana= ganaUsuario;
-    let compuGana= ganaPC
-    resultadoFinalfin( usuGana, compuGana);
 }
 
 function resultadoFinalfin( ganaUsuario, ganaPC){

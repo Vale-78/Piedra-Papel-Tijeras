@@ -19,21 +19,25 @@ Aquí podrás divertirte jugando a Piedra Papel y tijeras contra tu PC.
 
 #### Animación de título
 << Al colocar el mouse sobre el título, observarás una dinámica animacíon (Rotación y cambio de colores)
+![](./assest/ImpresionPantalla0.png)
 
 #### Ingreso del nombre de usuario
-<< Es necesario completar esta entrada para acceder al saludo y así habilitar el botón "Iniciar Juego"
+<< Es necesario completar esta entrada para acceder al saludo y así habilitar el botón "Iniciar Juego".
+En caso de no completarlo, aparece mensaje: "Ingresa un nombre válido".
    Entrada1: "Nombre";   
-* Salida: "Bienvenida/o " + nombre + " !" + "<br/> Si estás lista/o para comenzar, inicia Juego!".
-
+* Salida: "Bienvenida/o  nombre!,  Si estás lista/o para comenzar, inicia Juego!".
+![](./assest/ImpresionPantalla1.png)
+![](./assest/ImpresionPantalla2.png)
 #### Habilitación al clickear el botón "Iniciar Juego"
 << Una vez concretado el saludo, se habilita el botón para Iniciar juego!!
 Haciendo "click" al botón "Iniciar Juego", se habilitan botones para seleccionar Jugada:
 * Piedra.
 * Papel.
 * Tijeras.
+![](./assest/ImpresionPantalla3.png)
 
-#### Campos vacíos
-<< Entrada1:  ;  Entrada2: 25;  Operación: Todas; 
+#### Grilla de conteo de Resultados
+<< Cada vez que el usuario selecciona una opción de juego
 * Salida: "Debes ingresar un valor en ambos campos".
 
 #### Más de un punto
@@ -100,4 +104,3 @@ Cualquier tipo de aportes son bienvenidos.
 
 ## Impresión de pantalla
 
-![](./assest/MiCalcu.png)

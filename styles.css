@@ -28,13 +28,6 @@ main{
     rotate: 360deg;
   }
               
-
-/* .choice:hover{
-    background: #e25b4d;
-    cursor: pointer;
-    animation: shake 1s ;  // animaci+on al pasar el hover
-  } */   
-
 /* Sección título */
 
 .info-container{
@@ -90,7 +83,10 @@ main{
 
 
 /* sección seleccionar-jugada */
-
+#seleccionar-jugada p{
+    text-align: center;
+    color: var(--oscuro-bg-color);
+}
 
 #seleccionar-jugada .botones-container {
   
@@ -103,7 +99,6 @@ main{
     padding: 10px;
     margin: 35px;
 }
-
 
 @keyframes shake {
     10%,
@@ -123,6 +118,7 @@ main{
 }
 #seleccionar-jugada .botones-container .botones .efecto {
     animation: shake 1s;
+    margin-top: 2%;
 }
 #seleccionar-jugada .botones-container .botones {
     font-size: 24px;
@@ -292,6 +288,9 @@ main{
     #saludoContainer .usuarioNameContainer p{
         font-size: large;
     }
+    #seleccionar-jugada p{
+        font-size: small;
+    }
     .p6 { 
         grid-column: 1/3;
         grid-row: 4; 
@@ -303,7 +302,7 @@ main{
         padding: 0;
     }
     #seleccionar-jugada .botones-container .botones p{
-        font-size: medium; 
+        font-size: small; 
     }
     #seleccionar-jugada .botones-container .botones button{
       max-width: 30%;

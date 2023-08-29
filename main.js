@@ -4,10 +4,10 @@ let resultado;
 let piedra = "piedra";
 let papel = "papel";
 let tijeras= "tijeras";
-ganaPC= 0;
-ganaUsuario = 0;
-partidosJugados = 0;
-let resultadoFinal;
+let ganaPC = 0;
+let ganaUsuario = 0;
+let partidosJugados = 0;
+
 
 // disable desabilitar botones
 // display NamedNodeMap, display block
@@ -120,61 +120,64 @@ let resultadoFinal;
     } 
 
     function determinarGanador(eleccionJugador, jugadaCompu){
-        const resultadoRondaParrafo = document.getElementById("resultadoRonda");
-        let numGanaUsuario = document.getElementById("numeroGanaUsuario");
-        let numGanaPC = document.getElementById("numeroGanaPC");
-
-
-        while((partidosJugados < 5) && (ganaPC < 3 || ganaUsuario < 3)) { 
+       
+        while((ganaPC < 3 && ganaUsuario < 3) ) { 
+            const resultadoRondaParrafo = document.getElementById("resultadoRonda");
+            let numGanaUsuario = document.getElementById("numeroGanaUsuario");
+            let numGanaPC = document.getElementById("numeroGanaPC");
+            
         if(eleccionJugador==jugadaCompu){
             resultado = "Empate";
             resultadoRondaParrafo.innerHTML = resultado;
             numGanaUsuario.innerHTML = ganaUsuario;
             numGanaPC.innerHTML= ganaPC;
-
             
         }else if((eleccionJugador==piedra && jugadaCompu ==tijeras) || (eleccionJugador==papel && jugadaCompu == piedra ) || (eleccionJugador==tijeras && jugadaCompu == papel)){
+            partidosJugados = partidosJugados +1;
+            console.log(partidosJugados);
+            ganaUsuario = ganaUsuario +1;
             resultado = "Ganaste!!!";
             resultadoRondaParrafo.innerHTML = resultado;
-            ganaUsuario = ganaUsuario +1;
-            partidosJugados = partidosJugados +1;
             numGanaUsuario.innerHTML = ganaUsuario;
             numGanaPC.innerHTML= ganaPC;
         }else{
             resultado = "Gana la computadora";
-            resultadoRondaParrafo.innerHTML = resultado;
-            ganaPC=ganaPC +1;
             partidosJugados = partidosJugados +1;
+            console.log(partidosJugados);
+            ganaPC = ganaPC +1;
+            resultadoRondaParrafo.innerHTML = resultado;
             numGanaUsuario.innerHTML = ganaUsuario;
             numGanaPC.innerHTML= ganaPC;
-        }
-
-        return resultado  
+        }  
+        return resultado;
      }
-      resultadoFinalfin(ganaUsuario, ganaPC);
+     let usuGana= ganaUsuario;
+     let compuGana= ganaPC
+      resultadoFinalfin( usuGana, compuGana);
     }
 
 
-    function resultadoFinalfin(ganaUsuario, ganaPC){
+    function resultadoFinalfin( ganaUsuario, ganaPC){
 
         let nombre = document.getElementById("nombreUsuario").value;
-
         let resultFinal = document.getElementById("resultFinal");
-        if(ganaUsuario > ganaPC){
-            document.getElementById("Piedra").disabled = true;
-            document.getElementById("Papel").disabled = true;
-            document.getElementById("Tijeras").disabled = true;
+        
+        if( ganaUsuario > ganaPC){
             resultFinal.innerHTML = `Felicitaciones ` + nombre + `,  Ganaste!!!!`
+            document.getElementById("Piedra").disabled;
+            document.getElementById("Papel").disabled;
+            document.getElementById("Tijeras").disabled;
         }else{
-            document.getElementById("Piedra").disabled = true;
-            document.getElementById("Papel").disabled = true;
-            document.getElementById("Tijeras").disabled = true;
             resultFinal.innerHTML = ` Lo siento `  + nombre + `, Gana la Computadora.`
+            document.getElementById("Piedra").disabled;
+            document.getElementById("Papel").disabled;
+            document.getElementById("Tijeras").disabled;
         };
         let seccionReiniciar= document.getElementById("reiniciarJuego");
         seccionReiniciar.style.display = "block";      
         let resetJuego = document.getElementById("resetButton");
         resetJuego.addEventListener("click",reiniciar);
+        return resultFinal;
     }            
 
 function reiniciar(){

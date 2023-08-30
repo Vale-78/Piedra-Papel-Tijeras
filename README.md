@@ -1,7 +1,7 @@
 
 ## PIEDRA-PAPEL-TIJERAS
-Interacción entre HTML, JS y CSS.
-### AUTOR: Inés Valeria Foglino
+
+#### AUTOR: Inés Valeria Foglino
 
 ### Herramientas
 Este proyecto integra HTML, CSS Y JavaScript. 
@@ -18,11 +18,11 @@ Aquí podrás divertirte jugando a Piedra Papel y tijeras contra tu PC.
 ### Casos de prueba:
 
 ##### Animación de título
-<< Al colocar el mouse sobre el título, observarás una dinámica animacíon (Rotación y cambio de colores)
+Al colocar el mouse sobre el título, observarás una dinámica animacíon (Rotación y cambio de colores)
 ![](./assest/ImpresionPantalla0.png)
 
 ##### Ingreso del nombre de usuario
-<< Es necesario completar esta entrada para acceder al saludo y así habilitar el botón "Iniciar Juego".
+Es necesario completar esta entrada para acceder al saludo y así habilitar el botón "Iniciar Juego".
 En caso de no completarlo, aparece mensaje: "Ingresa un nombre válido".
    Entrada1: "Nombre";   
 * Salida: "Bienvenida/o  nombre!,  Si estás lista/o para comenzar, inicia Juego!".
@@ -30,7 +30,7 @@ En caso de no completarlo, aparece mensaje: "Ingresa un nombre válido".
 ![](./assest/ImpresionPantalla2.png)
 
 ##### Habilitación al clickear el botón "Iniciar Juego"
-<< Una vez concretado el saludo, se habilita el botón para Iniciar juego!!
+Una vez concretado el saludo, se habilita el botón para Iniciar juego!!
 Haciendo "click" al botón "Iniciar Juego", se habilitan botones para seleccionar Jugada:
 * Piedra.
 * Papel.
@@ -40,7 +40,7 @@ Haciendo "click" al botón "Iniciar Juego", se habilitan botones para selecciona
 ![](./assest/ImpresionPantalla4.png)
 
 ##### Grilla de conteo de Resultados
-<< Cada vez que el usuario selecciona una opción de juego debajo se observa: 
+Cada vez que el usuario selecciona una opción de juego debajo se observa: 
 * Elección de Usuario
 * Elección de Computador
 * Puntos de Juego de cada uno de los jugadores.
@@ -49,7 +49,7 @@ Haciendo "click" al botón "Iniciar Juego", se habilitan botones para selecciona
 ![](./assest/ImpresionPantalla5.png)
 
 ##### Resultado final
-<< Luego que ganó uno de los jugadores, aparece un mensaje de resultado final correspondiente al mejor de 5 jugadas.
+Luego que ganó uno de los jugadores, aparece un mensaje de resultado final correspondiente al mejor de 5 jugadas.
 Cabe destacar que se felicita al usuario con su "nombre" ingresado al inicio.
 
 ![](./assest/ImpresionPantalla6.png)
@@ -99,7 +99,7 @@ function determinarGanador(eleccionJugador, jugadaCompu){
 
 ```
 
-### Cómo correr la aplicación _"Calculadora"_?
+### Cómo correr la aplicación _"Piedra, papel y tijeras"_?
 
 Para ejecutar esta aplicación, simplemente se necesita clonar el proyecto y ejecutar el archivo html.
 Sino, accede directamente desde aquí:

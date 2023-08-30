@@ -23,11 +23,14 @@ Al colocar el mouse sobre el título, observarás una dinámica animacíon (Rota
 
 ##### Ingreso del nombre de usuario
 Es necesario completar esta entrada para acceder al saludo y así habilitar el botón "Iniciar Juego".
-En caso de no completarlo, aparece mensaje: "Ingresa un nombre válido".
-   Entrada1: "Nombre";   
-* Salida: "Bienvenida/o  nombre!,  Si estás lista/o para comenzar, inicia Juego!".
-![](./assest/ImpresionPantalla1.png)
 ![](./assest/ImpresionPantalla2.png)
+
+En caso de no completarlo, aparece mensaje: "Ingresa un nombre válido".
+   
+![](./assest/ImpresionPantalla1.png)
+
+Al colocar el usuario su "Nombre", aparece el siguiente saludo: "Bienvenida/o  nombre!,  Si estás lista/o para comenzar, inicia Juego!".
+![](./assest/ImpresionPantalla3.png)
 
 ##### Habilitación al clickear el botón "Iniciar Juego"
 Una vez concretado el saludo, se habilita el botón para Iniciar juego!!
@@ -36,7 +39,7 @@ Haciendo "click" al botón "Iniciar Juego", se habilitan botones para selecciona
 * Papel.
 * Tijeras.
 
-![](./assest/ImpresionPantalla3.png)
+
 ![](./assest/ImpresionPantalla4.png)
 
 ##### Grilla de conteo de Resultados
